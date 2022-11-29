@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package com.category;
+option java_package = "com.fullcycle.template.category";
+option java_outer_classname = "CategoryProto";
+option java_multiple_files = true;
+
+message Category {
+    int32 id = 1;
+    string name = 2;
+    string description = 3;
+}
+
+message CategoryList {
+    repeated Category categories = 1;
+}
+
+message Empty {}
+
+service CategoryService {
+  rpc Create (Category) returns (Category) {}
+  rpc List (Empty) returns (CategoryList) {}
+}

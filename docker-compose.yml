@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+  database:
+    container_name: postgres_java-grpc
+    image: postgres:12
+    environment:
+      POSTGRES_USER: java-grpc
+      POSTGRES_PASSWORD: java-grpc
+    ports:
+      - "5432:5432"
